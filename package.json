@@ -1,0 +1,27 @@
+{
+  "name": "four-the-people",
+  "version": "1.0.0",
+  "description": "MERN stack application created for ADPD",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatW-M/four-the-people.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatW-M/four-the-people/issues"
+  },
+  "homepage": "https://github.com/CatW-M/four-the-people#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
