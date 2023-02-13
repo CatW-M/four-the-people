@@ -33,8 +33,9 @@ const createNewCategory = asyncHandler(async (req, res) => {
         return res.status(409).json({ message: 'Duplicate category' })
     }
 
+    const categoriesObject = { name }
     // Create and store new category 
-    const category = await Category.create(userObject)
+    const category = await Category.create(categoriesObject)
 
     if (category) { //created 
         res.status(201).json({ message: `New category ${name} created` })

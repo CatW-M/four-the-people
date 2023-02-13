@@ -33,6 +33,8 @@ const createNewDisposal = asyncHandler(async (req, res) => {
         return res.status(409).json({ message: 'Duplicate disposal method' })
     }
 
+    const disposalObject = { name, description }
+
     // Create and store new disposal 
     const disposal = await Disposal.create(disposalObject)
 

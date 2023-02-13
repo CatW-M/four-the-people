@@ -6,7 +6,7 @@ const disposalSchema = new mongoose.Schema({
         required: true
     },
     description: {
-        type: Text,
+        type: String,
         required: true
     }
 },
@@ -14,4 +14,4 @@ const disposalSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-module.exports = mongoose.model('', disposalSchema)
+module.exports = mongoose.model('disposals', disposalSchema)
