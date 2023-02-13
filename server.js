@@ -34,6 +34,8 @@ app.use('/users', require('./routes/userRoutes'));
 
 app.use('/categories', require('./routes/categoryRoutes'));
 
+app.use('/disposals', require('./routes/disposalRoutes'));
+
 app.all('*', (req, res) => {
     res.status(404)
     if (req.accepts('html')) {
