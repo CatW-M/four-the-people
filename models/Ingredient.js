@@ -10,10 +10,14 @@ const ingredientSchema = new mongoose.Schema({
         required: true,
         ref: 'Category'
     },
-    storage: [{
-        method: String,
-        holdTime: Number
-    }],
+    holdTimes: {
+        type: {
+            roomTemperature: Number,
+            refrigerated: Number,
+            frozen: Number
+        }, 
+        required: true,
+    },
     disposal: {
         type: [mongoose.Schema.Types.ObjectId],
         required: true,
