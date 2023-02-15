@@ -36,6 +36,8 @@ app.use('/categories', require('./routes/categoryRoutes'));
 
 app.use('/disposals', require('./routes/disposalRoutes'));
 
+app.use('/ingredients', require('./routes/ingredientRoutes'));
+
 app.all('*', (req, res) => {
     res.status(404)
     if (req.accepts('html')) {

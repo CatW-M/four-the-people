@@ -14,4 +14,4 @@ const disposalSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-module.exports = mongoose.model('disposals', disposalSchema)
+module.exports = mongoose.model('Disposal', disposalSchema)
