@@ -1,30 +1,34 @@
-const foodVaultSchema = new mongoose.Schema({
-    ingredient: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Ingredient'
-    },
+const mongoose = require('mongoose')
 
-    owners: {
-        type: [mongoose.Schema.Types.ObjectId],
+const foodVaultSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
     },
+    title: String,
+    items: [{
+        ingredient: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'Ingredient'
+        },
 
-    dateIn: {
-        type: String,
-        required: true
-    },
+        dateIn: {
+            type: String,
+            required: true
+        },
 
-    storageMethod: {
-        type: String,
-        required: true
-    },
+        storageMethod: {
+            type: String,
+            required: true
+        },
 
-    expDate: {
-        type: String,
-        required: true
-    }
+        expDate: {
+            type: String,
+            required: true
+        }
+    }]
 },
 {
     timestamps: true,
