@@ -9,14 +9,14 @@ export default function Login() {
   const {data: session} = useSession();
   if (session) {
    return (
-    <>
-      <div>Welcome, {session.user.name}</div>
+    <div>
+      <div className="">Welcome, {session.user.name}</div>
       <button onClick={() => signOut()}>Sign out</button>
-    </>
+    </div>
    ) 
   } else {
     return (
-      <div className="h-screen">
+      <div className="">
         <p>You are not signed in.</p>
         <button onClick={() => signIn()}>Sign in</button>
       </div>
