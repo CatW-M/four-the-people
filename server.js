@@ -38,6 +38,8 @@ app.use('/disposals', require('./routes/disposalRoutes'));
 
 app.use('/ingredients', require('./routes/ingredientRoutes'));
 
+app.use('/foodvault', require('./routes/foodVaultRoutes'));
+
 app.all('*', (req, res) => {
     res.status(404)
     if (req.accepts('html')) {

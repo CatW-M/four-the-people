@@ -21,7 +21,7 @@ const getAllIngredients = asyncHandler(async (req, res) => {
 // @route POST /ingredients
 // @access Private
 const createNewIngredient = asyncHandler(async (req, res) => {
-    const { name, category, disposal, holdTimes } = req.body
+    const { name, category, disposal, holdTimes, tips } = req.body
     const existingCategory = await Category.findById(category)
     const existingDisposal = await Disposal.findById(disposal)
 
@@ -48,7 +48,7 @@ const createNewIngredient = asyncHandler(async (req, res) => {
         return res.status(409).json({ message: 'Duplicate ingredient method' })
     }
 
-    const ingredientObject = { name, category, disposal, holdTimes }
+    const ingredientObject = { name, category, disposal, holdTimes, tips }
 
     // Create and store new ingredient 
     const ingredient = await Ingredient.create(ingredientObject)
@@ -64,7 +64,7 @@ const createNewIngredient = asyncHandler(async (req, res) => {
 // @route PATCH /ingredients
 // @access Private
 const updateIngredient = asyncHandler(async (req, res) => {
-    const { id, name, category, holdTimes, disposal } = req.body
+    const { id, name, category, holdTimes, disposal, tips } = req.body
 
     // Confirm data 
     if (!id || !name || !category || !holdTimes || !disposal ) {
@@ -107,6 +107,7 @@ const updateIngredient = asyncHandler(async (req, res) => {
     ingredient.category = category
     ingredient.disposal = disposal
     ingredient.holdTimes = holdTimes
+    ingredient.tips = tips
 
 
     const updatedIngredient = await ingredient.save()

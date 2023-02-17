@@ -23,6 +23,9 @@ const ingredientSchema = new mongoose.Schema({
         required: true,
         ref: 'Disposal'
     },
+    tips: {
+        type: String
+    }
 },
 {
     timestamps: true,
