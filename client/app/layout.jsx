@@ -7,10 +7,12 @@ export default function RootLayout({ children }) {
       <head />
       <body className="h-screen">
         <Providers>
-          <div>
-            <nav>Navbar</nav>
-            <main>{children}</main>
-          </div>
+            <div className="navbar">
+              <nav>Navbar</nav>
+            </div>
+            <main className="main">
+              {children}
+            </main>
         </Providers>
       </body>
     </html>

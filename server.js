@@ -32,6 +32,14 @@ app.use('/', require('./routes/root'));
 
 app.use('/users', require('./routes/userRoutes'));
 
+app.use('/categories', require('./routes/categoryRoutes'));
+
+app.use('/disposals', require('./routes/disposalRoutes'));
+
+app.use('/ingredients', require('./routes/ingredientRoutes'));
+
+app.use('/foodvault', require('./routes/foodVaultRoutes'));
+
 app.all('*', (req, res) => {
     res.status(404)
     if (req.accepts('html')) {
